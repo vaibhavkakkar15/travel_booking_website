@@ -1,0 +1,14 @@
+<% layout('layouts/boilerplate2.ejs') %>
+<section class="container">
+  <div class="row">
+    <div class="col-lg-6 mt-5 d-flex-justify-content-flexstart">
+      <div class="card shadow-sm mx-auto" style="width: 22rem">
+        <img src="<%= package.img %>" alt="<%=package.name%>" />
+        <div class="card-body">
+          <h2 class="card-title"><%= package.price %></h2>
+          <a href="" class="btn btn-success btn-sm">Book Now</a>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>

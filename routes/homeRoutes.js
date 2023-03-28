@@ -1,9 +1,17 @@
 const express = require("express");
 const router = express.Router();
-// const back = require("../public/videos/back.mp4");
+const Package = require("../models/packageSchema");
 //display Home page
 router.get("/home", async (req, res) => {
-  res.render("home/index.ejs");
+  let packages = await Package.find({});
+  res.render("home/index.ejs", { packages });
+});
+
+//show the package
+router.get("/home/:id", async (req, res) => {
+  const { id } = req.params;
+  const package = await Package.findById(id);
+  res.render("home/show", { package });
 });
 
 module.exports = router;
