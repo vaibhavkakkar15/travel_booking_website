@@ -2,20 +2,19 @@
   margin: 0;
   padding: 0;
 }
-body {
-  margin: 0;
-  padding: 0;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
+
+main {
+  width: 100% !important;
 }
 
-header {
+html,
+body {
   width: 100%;
-}
-main {
-  
-  width: 100%;
+  height: 100%;
+  margin: 0px;
+  padding: 0px;
+  /* overflow-x: hidden;
+  overflow-y: scroll; */
 }
 
 #bnner {
@@ -32,19 +31,44 @@ main.container-fluid {
   width: 100%;
   position: fixed;
 }
+
+.packages {
+  width: 100vw;
+  height: 100%;
+  position: relative;
+  top: 100vh;
+}
+
 .show-package {
   display: flex;
   align-items: center;
   justify-content: flex-start;
   background-color: black;
-  height: 100vh;
+  height: 100%;
   width: 100%;
 }
+
 #navbar2 {
   width: 100%;
   position: fixed;
-  background-color: blue;
-  margin-bottom: 2.5rem;
+  background-color: hsl(218, 41%, 15%);
+  background-image: radial-gradient(
+      650px circle at 0% 0%,
+      hsl(218, 41%, 35%) 15%,
+      hsl(218, 41%, 30%) 35%,
+      hsl(218, 41%, 20%) 75%,
+      hsl(218, 41%, 19%) 80%,
+      transparent 100%
+    ),
+    radial-gradient(
+      1250px circle at 100% 100%,
+      hsl(218, 41%, 45%) 15%,
+      hsl(218, 41%, 30%) 35%,
+      hsl(218, 41%, 20%) 75%,
+      hsl(218, 41%, 19%) 80%,
+      transparent 100%
+    );
+  /* margin-bottom: 10rem; */
 }
 
 #brand {
@@ -54,7 +78,7 @@ main.container-fluid {
 #banner-image {
   background-image: url("https://assets.wego.com/image/upload/c_fill,fl_lossy,q_auto:best,f_auto,w_2560/v1597920829/web/hero_images/in_1.jpg");
   width: 100%;
-  height: 100vh;
+  height: 100%;
   position: absolute;
   left: 0;
   top: 0;
@@ -92,45 +116,7 @@ main.container-fluid {
   width: 100%;
 }
 
-.packages {
+footer {
   position: relative;
-  top: 100vh;
-}
-
-.footer-b {
-  height: 30vh;
-  width: 100%;
-  background-size: cover;
-}
-
-.footer {
-  margin-top: auto;
-}
-
-.strip {
-  background-color: rgb(255, 78, 107);
-  width: 100%;
-  height: 10vh;
-  color: white;
-  font-size: 30px;
-  font-weight: 700;
-  display: flex;
-
-  align-items: center;
-}
-
-.strip-items {
-  justify-content: center;
-}
-
-.footer-2 {
-  height: 40vh;
-  width: 100%;
-  background-color: rgb(7, 7, 54);
-}
-
-@media screen and (max-width: 694px) {
-  main{
-    width: 688px;
-  }
+  top: 100%;
 }

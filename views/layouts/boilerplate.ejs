@@ -22,15 +22,19 @@
     />
     <link rel="stylesheet" href="/css/app.css" />
     <link rel="stylesheet" href="/css/cards.css" />
-
+    <link rel="stylesheet" href="/css/footer.css" />
+    <link rel="stylesheet" href="/css/login.css" />
+    <link rel="stylesheet" href="/css/contact.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+    />
     <title>DestinationDreams</title>
   </head>
-  <body>
-    <header style="width: 100%">
-      <%- include('../partials/navbar.ejs') %>
-
-      <main style="width: 100%"><%-body-%></main>
-    </header>
+  <body class="d-flex flex-column vh-100">
+    <header><%- include('../partials/navbar.ejs') %></header>
+    <main style="width: 100%"><%-body-%></main>
+    <footer><%- include('../partials/footer.ejs') %></footer>
 
     <!-- <main class="container" style="width: 100%"></main> -->
 
@@ -41,5 +45,6 @@
       crossorigin="anonymous"
     ></script>
     <script src="/js/typeWriter.js"></script>
+    <script src="/js/contact.js"></script>
   </body>
 </html>
