@@ -14,4 +14,10 @@ router.get("/home/:id", async (req, res) => {
   res.render("home/show", { package });
 });
 
+//route for getting all the packages page
+router.get("/packages", async (req, res) => {
+  let packages = await Package.find({});
+  res.render("pk/packages.ejs", { packages });
+});
+
 module.exports = router;
