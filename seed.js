@@ -24,12 +24,12 @@ const packages = [
     name: "Goa",
     img: "https://images.unsplash.com/photo-1587922546307-776227941871?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxzZWFyY2h8NHx8Z29hfGVufDB8fDB8fA%3D%3D&auto=format&fit=crop&w=500&q=60",
     price: 19999,
-    desc: "badiya cheeGoa is a coastal state located on the western coast of India, known for its beautiful beaches, rich history, and vibrant culture. It is the smallest state in India but attracts a large number of domestic and international tourists every year.",
+    desc: "Goa is a coastal state located on the western coast of India, known for its beautiful beaches, rich history, and vibrant culture. It is the smallest state in India but attracts a large number of domestic and international tourists every year.",
   },
   {
     name: "Manali",
     img: "https://images.unsplash.com/photo-1626621341517-bbf3d9990a23?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxzZWFyY2h8NXx8bWFuYWxpfGVufDB8fDB8fA%3D%3D&auto=format&fit=crop&w=500&q=60",
-    price: 7999,
+    price:  7999,
     desc: "Manali is a picturesque hill station located in the Kullu district of the northern Indian state of Himachal Pradesh. It is situated in the heart of the Himalayas, and its breathtaking natural beauty and pleasant climate make it a popular destination for tourists from all over the world.",
   },
 ];

@@ -5,45 +5,14 @@
       <h1
         class="typewrite"
         data-period="2000"
-        data-type='[ "HABIBI Come to India ", "Adventure awaits, go find it.", "Don’t be a tourist, be a traveler." ]'
+        data-type='[ "HABIBI Come to India ", "Adventure awaits, go find it.", "Don’t be a tourist, be a traveler.","Mountain Calling" ]'
       ></h1>
     </div>
   </div>
 </header>
 
 <% layout('layouts/boilerplate.ejs') %>
-<!-- <section class="packages row-md">
-  <div class="container py-4">
-    <h1 class="h1 text-center" id="pageHeaderTitle">Explore Our Packages</h1>
 
-    <% for(let item of packages){ %>
-    <article class="postcard dark blue">
-      <a class="postcard__img_link" href="#">
-        <img class="postcard__img" src="<%= item.img %>" alt="Image Title" />
-      </a>
-      <div class="postcard__text">
-        <h1 class="postcard__title blue"><a href="#"><%=item.name%></a></h1>
-        <div class="postcard__subtitle small">
-          <time datetime="2020-05-25 12:00:00">
-            <i class="fas fa-calendar-alt mr-2"></i>Mon, May 25th 2020
-          </time>
-        </div>
-        <div class="postcard__bar"></div>
-        <div class="postcard__preview-txt"><%= item.desc %></div>
-        <h1 class="postcard__title blue">
-          <a href="#">Rs <%=item.price%></a>
-        </h1>
-        <ul class="postcard__tagbox">
-          <li class="tag__item">
-            <i class="fas fa-tag mr-2"></i
-            ><a href="/home/<%=item._id%>">Details</a>
-          </li>
-        </ul>
-      </div>
-    </article>
-    <%}%>
-  </div>
-</section> -->
 <link
   href="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css"
   rel="stylesheet"
@@ -59,8 +28,8 @@
   integrity="sha384-hWVjflwFxL6sNzntih27bfxkr27PmbbK/iSvJ+a4+0owXq79v+lsFkW54bOGbiDQ"
   crossorigin="anonymous"
 />
-<div class="container packages">
-  <h3 class="pb-3 mb-4 font-italic border-bottom">Card Styles</h3>
+<div class="container packages mt-5">
+  <h3 class="pb-3 mb-4 font-italic border-bottom text-center mb-5">Explore Our Packages</h3>
   <div class="row">
     <% for(let item of packages){ %>
     <div class="col-md-6">
@@ -70,13 +39,13 @@
             ><%=item.name%></strong
           >
 
-          <div class="mb-1 text-muted small">Nov 12</div>
+          <div class="mb-1 text-muted small"><%=item.price%></div>
           <p class="card-text mb-auto"><%=item.desc%></p>
           <a
-            class="btn btn-outline-primary btn-sm"
+            class="btn btn-outline-primary btn-sm mt-4"
             role="button"
-            href="http://www.jquery2dotnet.com/"
-            >Continue reading</a
+            href="/home/<%=item._id%>"
+            >Book Now</a
           >
         </div>
         <img
@@ -89,39 +58,9 @@
     </div>
     <% } %>
   </div>
+<section><%-include("../contact/contactus.ejs")%></section>
+
 </div>
 
-<!-- <section class="packages row-md">
-  <div class="container py-4">
-    <h1 class="h1 text-center" id="pageHeaderTitle">Explore Our Packages</h1>
 
-    <% for(let item of packages){ %>
-    <article class="postcard dark blue">
-      <a class="postcard__img_link" href="#">
-        <img class="postcard__img" src="<%= item.img %>" alt="Image Title" />
-      </a>
-      <div class="postcard__text">
-        <h1 class="postcard__title blue"><a href="#"><%=item.name%></a></h1>
-        <div class="postcard__subtitle small">
-          <time datetime="2020-05-25 12:00:00">
-            <i class="fas fa-calendar-alt mr-2"></i>Mon, May 25th 2020
-          </time>
-        </div>
-        <div class="postcard__bar"></div>
-        <div class="postcard__preview-txt"><%= item.desc %></div>
-        <h1 class="postcard__title blue">
-          <a href="#">Rs <%=item.price%></a>
-        </h1>
-        <ul class="postcard__tagbox">
-          <li class="tag__item">
-            <i class="fas fa-tag mr-2"></i
-            ><a href="/home/<%=item._id%>">Details</a>
-          </li>
-        </ul>
-      </div>
-    </article>
-    <%}%>
-  </div>
-</section> -->
 
-<section><%-include("../contact/contactus.ejs")%></section>

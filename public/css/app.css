@@ -27,7 +27,7 @@ main.container-fluid {
   /* padding: 30px 0px; */
   z-index: 99;
   width: 100%;
-  position: fixed;
+  /* position: fixed; */
 }
 
 .packages {
