@@ -29,7 +29,7 @@ const packages = [
   {
     name: "Manali",
     img: "https://images.unsplash.com/photo-1626621341517-bbf3d9990a23?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxzZWFyY2h8NXx8bWFuYWxpfGVufDB8fDB8fA%3D%3D&auto=format&fit=crop&w=500&q=60",
-    price:  7999,
+    price: 7999,
     desc: "Manali is a picturesque hill station located in the Kullu district of the northern Indian state of Himachal Pradesh. It is situated in the heart of the Himalayas, and its breathtaking natural beauty and pleasant climate make it a popular destination for tourists from all over the world.",
   },
 ];

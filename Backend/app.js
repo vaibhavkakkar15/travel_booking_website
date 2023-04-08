@@ -28,7 +28,6 @@ mongoose
 
 //seeding dummy data
 // seedDB();
-
 //using routes
 app.use(homeRoutes);
 app.use(loginRoutes);

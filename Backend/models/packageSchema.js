@@ -19,9 +19,12 @@ const packageSchema = new mongoose.Schema({
     required: true,
   },
   desc: {
+  
+  },
+  longDesc:{
     type: String,
     trim: true,
-  },
+  }
 });
 
 let Package = mongoose.model("Package", packageSchema);

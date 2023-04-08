@@ -1,14 +1,43 @@
 <% layout('layouts/boilerplate2.ejs') %>
-<section class="container">
-  <div class="row">
-    <div class="col-lg-6 mt-5 d-flex-justify-content-flexstart">
-      <div class="card shadow-sm mx-auto" style="width: 22rem">
-        <img src="<%= package.img %>" alt="<%=package.name%>" />
-        <div class="card-body">
-          <h2 class="card-title"><%= package.price %></h2>
-          <a href="" class="btn btn-success btn-sm">Book Now</a>
+<section id="pac">
+  <div class="row container">
+    <div class="col-md-6 sec mb-5">
+      <div class="card" style="width: 18rem">
+        <img src=" <%=package.img%> " class="card-img-top" />
+        <div class="card-body booking">
+          <h5 class="card-title text-light"><%= package.name %></h5>
+          <a href="#" class="btn btn-primary">Add to Cart</a>
         </div>
       </div>
     </div>
+    <div class="col-mid-6 sec2 mb-5 mr-5">
+      <!-- booking ui -->
+      <div class="booking shadow p-4 rounded-2xl" style="width: 100%">
+        <div class="text-2xl text-center">
+          <h5 class="text-light">Price:</h5>
+          <b class="text-light">₹ <%=package.price%> / per person</b>
+        </div>
+        <div class="border rounded-2xl mt-4">
+          <div class="d-flex">
+            <div class="py-3 px-4">
+              <label for="" class="text-light">Starting Date</label>
+              <input type="date" name="" id="" />
+            </div>
+            <div class="py-3 px-4 border-l">
+              <label for="" class="text-light">Ending Date</label>
+              <input type="date" name="" id="" />
+            </div>
+          </div>
+          <div class="py-3 px-4 border-t">
+            <label for="" class="text-light">Number of guests</label>
+            <input type="number" value="{1}" />
+          </div>
+        </div>
+        <button class="btn btn-primary mt-4">Book this package</button>
+      </div>
+    </div>
+  </div>
+  <div class="container row">
+    <h1 class="text-center mt-5">Package description</h1>
   </div>
 </section>

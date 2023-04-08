@@ -1,5 +1,9 @@
-import React, { useState, useEffect } from "react";
+import React, { useState, useEffect, Switch } from "react";
+import rootRoutes from "./Components/rootRoutes";
 import "./App.css";
+import { BrowserRouter, Router, Route } from "react-router-dom";
+
+import noMatch from "./Components/noMatch";
 
 function App() {
   const [message, setMessage] = useState("");
@@ -12,7 +16,13 @@ function App() {
 
   return (
     <div className="App">
-      <h1>{message}</h1>
+      <BrowserRouter>
+        {/* <NotificationContainer /> */}
+        <Switch>
+          <Route path="/admin" component={rootRoutes} />
+          <Route component={noMatch} />
+        </Switch>
+      </BrowserRouter>
     </div>
   );
 }
