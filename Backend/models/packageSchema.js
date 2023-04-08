@@ -19,7 +19,8 @@ const packageSchema = new mongoose.Schema({
     required: true,
   },
   desc: {
-  
+    type: String,
+    trim: true,
   },
   longDesc:{
     type: String,

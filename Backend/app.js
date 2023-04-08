@@ -4,8 +4,11 @@ const path = require("path");
 const ejsMate = require("ejs-mate");
 const homeRoutes = require("./routes/homeRoutes");
 const loginRoutes = require("./routes/loginRoutes");
+const bookingRoutes = require("./routes/bookingRoutes");
+const packageRoutes = require("./routes/packagesRoute");
 const mongoose = require("mongoose");
 const seedDB = require("./seed.js");
+const seedDB2 = require("./seed2.js");
 const port = 4000;
 
 app.engine("ejs", ejsMate);
@@ -28,8 +31,11 @@ mongoose
 
 //seeding dummy data
 // seedDB();
+// seedDB2();
 //using routes
 app.use(homeRoutes);
 app.use(loginRoutes);
+app.use(bookingRoutes);
+app.use(packageRoutes);
 
 app.listen(port, () => console.log(`Example app listening on port ${port}!`));

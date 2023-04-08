@@ -1,36 +1,5 @@
-<% layout('layouts/boilerplate.ejs') %>
-<!-- <section class="packages row-md">
-  <div class="container py-4">
-    <h1 class="h1 text-center" id="pageHeaderTitle">Explore Our Packages</h1>
+<% layout('layouts/boilerplate2.ejs') %>
 
-    <% for(let item of packages){ %>
-    <article class="postcard dark blue">
-      <a class="postcard__img_link" href="#">
-        <img class="postcard__img" src="<%= item.img %>" alt="Image Title" />
-      </a>
-      <div class="postcard__text">
-        <h1 class="postcard__title blue"><a href="#"><%=item.name%></a></h1>
-        <div class="postcard__subtitle small">
-          <time datetime="2020-05-25 12:00:00">
-            <i class="fas fa-calendar-alt mr-2"></i>Mon, May 25th 2020
-          </time>
-        </div>
-        <div class="postcard__bar"></div>
-        <div class="postcard__preview-txt"><%= item.desc %></div>
-        <h1 class="postcard__title blue">
-          <a href="#">Rs <%=item.price%></a>
-        </h1>
-        <ul class="postcard__tagbox">
-          <li class="tag__item">
-            <i class="fas fa-tag mr-2"></i
-            ><a href="/home/<%=item._id%>">Details</a>
-          </li>
-        </ul>
-      </div>
-    </article>
-    <%}%>
-  </div>
-</section> -->
 <link
   href="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css"
   rel="stylesheet"
@@ -62,7 +31,7 @@
           <a
             class="btn btn-outline-primary btn-sm"
             role="button"
-            href="http://www.jquery2dotnet.com/"
+            href="../home/<%=item._id%>"
             >Continue reading</a
           >
         </div>
