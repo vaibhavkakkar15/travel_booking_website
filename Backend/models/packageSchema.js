@@ -22,10 +22,16 @@ const packageSchema = new mongoose.Schema({
     type: String,
     trim: true,
   },
-  longDesc:{
+  longDesc: {
     type: String,
     trim: true,
-  }
+  },
+  reviews: [
+    {
+      type: mongoose.Schema.Types.ObjectId,
+      ref: "Review",
+    },
+  ],
 });
 
 let Package = mongoose.model("Package", packageSchema);

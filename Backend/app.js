@@ -7,6 +7,7 @@ const loginRoutes = require("./routes/loginRoutes");
 const bookingRoutes = require("./routes/bookingRoutes");
 const packageRoutes = require("./routes/packagesRoute");
 let methodOverride = require("method-override");
+// const reviewRoutes = require("./routes/reviewRoutes");
 const mongoose = require("mongoose");
 const seedDB = require("./seed.js");
 const seedDB2 = require("./seed2.js");
@@ -40,5 +41,6 @@ app.use(homeRoutes);
 app.use(loginRoutes);
 app.use(bookingRoutes);
 app.use(packageRoutes);
+// app.use(reviewRoutes);
 
 app.listen(port, () => console.log(`Example app listening on port ${port}!`));
