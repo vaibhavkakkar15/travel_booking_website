@@ -47,4 +47,11 @@ router.patch("/packages/:id", async (req, res) => {
   res.redirect(`/packages/${id}`);
 });
 
+
+//delete the package
+router.delete('/packages/:id' , async(req,res)=>{
+  let {id} = req.params;
+  await Package.findByIdAndDelete(id);
+  res.redirect('/packages');
+})
 module.exports = router;

@@ -8,9 +8,12 @@
           <h5 class="card-title text-light"><%= package.name %></h5>
           <a href="#" class="btn btn-primary">Add to Cart</a>
           <a href="/packages/new" class="btn btn-primary">Add Package</a>
-          <a href="../packages/<%=package._id%>/edit" class="btn btn-primary"
+          <a href="/packages/<%=package._id%>/edit" class="btn btn-success"
             >Edit</a
           >
+          <form class="d-inline-block" action="/packages/<%=package._id%>?_method=DELETE" method="POST">
+            <button class="btn btn-danger btn-sm">Delete</button>
+         </form>
         </div>
       </div>
     </div>
