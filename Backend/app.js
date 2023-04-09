@@ -6,6 +6,7 @@ const homeRoutes = require("./routes/homeRoutes");
 const loginRoutes = require("./routes/loginRoutes");
 const bookingRoutes = require("./routes/bookingRoutes");
 const packageRoutes = require("./routes/packagesRoute");
+let methodOverride = require("method-override");
 const mongoose = require("mongoose");
 const seedDB = require("./seed.js");
 const seedDB2 = require("./seed2.js");
@@ -18,6 +19,8 @@ app.set("views", path.join(__dirname, "views"));
 app.use(express.static(path.join(__dirname, "public")));
 
 app.use(express.urlencoded({ extended: true }));
+
+app.use(methodOverride("_method"));
 
 mongoose.set("strictQuery", false);
 mongoose

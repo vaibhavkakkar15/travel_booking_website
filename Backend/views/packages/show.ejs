@@ -7,12 +7,13 @@
         <div class="card-body booking">
           <h5 class="card-title text-light"><%= package.name %></h5>
           <a href="#" class="btn btn-primary">Add to Cart</a>
-          <a href="../packages/new" class="btn btn-primary">Add Package</a>
+          <a href="/packages/new" class="btn btn-primary">Add Package</a>
+          <a href="../packages/<%=package._id%>/edit" class="btn btn-primary"
+            >Edit</a
+          >
         </div>
       </div>
     </div>
-
-
 
     <!-- booking ui -->
     <div class="col-mid-6 sec2 mb-5 mr-5">
@@ -62,7 +63,6 @@
       </div>
     </div>
   </div>
-
 
   <!-- //Gallery -->
   <div class="container row">

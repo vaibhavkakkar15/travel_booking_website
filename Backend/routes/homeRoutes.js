@@ -13,7 +13,7 @@ router.get("/home/:id", async (req, res) => {
   const { id } = req.params;
   const package = await Package.findById(id);
   const gallery = await Gallery.findById(id);
-  res.render("home/show", { package ,gallery});
+  res.render("packages/show", { package ,gallery});
 });
 
 

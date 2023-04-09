@@ -29,7 +29,9 @@
   crossorigin="anonymous"
 />
 <div class="container packages mt-5">
-  <h3 class="pb-3 mb-4 font-italic border-bottom text-center mb-5">Explore Our Packages</h3>
+  <h3 class="pb-3 mb-4 font-italic border-bottom text-center mb-5">
+    Explore Our Packages
+  </h3>
   <div class="row">
     <% for(let item of packages){ %>
     <div class="col-md-6">
@@ -40,11 +42,13 @@
           >
 
           <div class="mb-1 text-muted small"><%=item.price%></div>
-          <p class="card-text mb-auto" minlength="5" maxlength="25"><%=item.desc%></p>
+          <p class="card-text mb-auto" minlength="5" maxlength="25">
+            <%=item.desc%>
+          </p>
           <a
             class="btn btn-outline-primary btn-sm mt-4"
             role="button"
-            href="/home/<%=item._id%>"
+            href="/packages/<%=item._id%>"
             >Book Now</a
           >
         </div>
@@ -58,9 +62,5 @@
     </div>
     <% } %>
   </div>
-<section><%-include("../contact/contactus.ejs")%></section>
-
+  <section><%-include("../contact/contactus.ejs")%></section>
 </div>
-
-
-
