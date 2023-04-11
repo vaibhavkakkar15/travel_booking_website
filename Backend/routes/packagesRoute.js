@@ -16,8 +16,8 @@ router.get("/packages/new", (req, res) => {
 
 //adding to Db
 router.post("/packages", async (req, res) => {
-  let { name, img, price, desc, longDesc } = req.body;
-  await Package.create({ name, img, price, desc, longDesc });
+  const { name, img, price, desc } = req.body;
+  await Package.create({ name, img, price, desc });
   res.redirect("/packages");
 });
 
@@ -47,11 +47,10 @@ router.patch("/packages/:id", async (req, res) => {
   res.redirect(`/packages/${id}`);
 });
 
-
 //delete the package
-router.delete('/packages/:id' , async(req,res)=>{
-  let {id} = req.params;
+router.delete("/packages/:id", async (req, res) => {
+  let { id } = req.params;
   await Package.findByIdAndDelete(id);
-  res.redirect('/packages');
-})
+  res.redirect("/packages");
+});
 module.exports = router;

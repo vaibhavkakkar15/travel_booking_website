@@ -1,5 +1,4 @@
-
-<nav class="navbar navbar-expand-lg " id="navbar2">
+<nav class="navbar navbar-expand-lg" id="navbar2">
   <div class="container-fluid">
     <a class="navbar-brand px-4" href="/home"
       ><h2 class="text-light" id="brand">DestinationDreams</h2></a
@@ -25,12 +24,23 @@
             >Home</a
           >
         </li>
-        <li class="nav-item px-3">
+        <!-- <li class="nav-item px-3">
           <a class="nav-link font-weight-bold textsize text-light" href="/packages"
             >packages</a
           >
+        </li> -->
+        <%if(currentUser && currentUser.role === 'seller'){%>
+        <li class="nav-item">
+          <a
+            class="nav-link"
+            href="/products/new"
+            tabindex="-1"
+            aria-disabled="true"
+            >New</a
+          >
         </li>
-        <li class="nav-item px-3">
+        <%}%>
+        <!-- <li class="nav-item px-3">
           <a class="nav-link font-weight-bold textsize text-light" href="#"
             >Contact</a
           >
@@ -39,4 +49,17 @@
           <a class="nav-link font-weight-bold textsize text-light" href="/login"
             >Login</a
           >
-        </li>
+        </li> -->
+        <%if(!currentUser){%>
+          <a href="/login" class="nav-link">Login</a> 
+        <%} else{%>
+          <a href="#" class="nav-link text-capitalize">Hello <%=currentUser.username%></i> 
+            <a href="/user/cart" class="nav-link"><i class="fas fa-shopping-cart"></i> 
+            <sup><span class="badge bg-danger"><%=currentUser.cart.length%></span></sup> 
+          </a>
+          <a href="/logout" class="nav-link">Logout</a>
+        <%}%>
+      </ul>
+    </div>
+  </div>
+</nav>

@@ -1,8 +1,8 @@
-const express = require("express");
-const router = express.Router();
+// const express = require("express");
+// const router = express.Router();
 
-router.get("/login", async (req, res) => {
-  res.render("login/login.ejs");
-});
+// router.get("/login", async (req, res) => {
+//   res.render("");
+// });
 
-module.exports = router;
+// module.exports = router;

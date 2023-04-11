@@ -74,7 +74,7 @@ main.container-fluid {
 }
 
 #banner-image {
-  background-image: url("https://img.freepik.com/free-photo/young-woman-hiker-taking-photo-with-smartphone-mountains-peak-winter_335224-427.jpg?w=996&t=st=1681030194~exp=1681030794~hmac=b6ee006803e91c85ca694dfa3263e3c0609507076df6de958dc6c3f4cb752c5f");
+  background-image: url("https://images.pexels.com/photos/730981/pexels-photo-730981.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1");
   width: 100%;
   height: 100%;
   position: absolute;
@@ -93,7 +93,7 @@ main.container-fluid {
   text-align: center;
   /* padding: 180px 240px; */
   position: relative;
-  color: black;
+  color: white;
   letter-spacing: 4px;
   text-transform: uppercase;
   font-weight: bold;
@@ -174,5 +174,59 @@ footer {
   }
   .sec2{
      width: 100%;
+  }
+}
+
+.scroll-banner {
+  position: absolute;
+  bottom: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  color: #fff;
+  font-size: 20px;
+  font-weight: bold;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  opacity: 0;
+  animation: scrollBanner 2s ease-in-out infinite;
+}
+
+.scroll-banner p {
+  margin-bottom: 10px;
+}
+
+.scroll-banner i {
+  font-size: 40px;
+  animation: scrollDown 1s ease-in-out infinite;
+}
+
+@keyframes scrollBanner {
+  0% {
+    opacity: 0;
+    transform: translateY(0);
+  }
+  50% {
+    opacity: 1;
+    transform: translateY(50%);
+  }
+  100% {
+    opacity: 0;
+    transform: translateY(100%);
+  }
+}
+
+@keyframes scrollDown {
+  0% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(10px);
+  }
+  100% {
+    transform: translateY(0);
   }
 }
