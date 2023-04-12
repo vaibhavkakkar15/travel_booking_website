@@ -12,7 +12,7 @@ const packages = [
   },
   {
     name: "RishiKesh",
-    img: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSKRFXl5ZRsR1SyH5PyMh-JqRkwtTvp-9bgCQ&usqp=CAU",
+    img: "https://images.unsplash.com/photo-1624807136278-e2973be118ff?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxzZWFyY2h8M3x8cmlzaGlrZXNoJTJDJTIwaW5kaWF8ZW58MHx8MHx8&auto=format&fit=crop&w=500&q=60",
     price: 4999,
     desc: "Rishikesh is a vibrant town located in the northern Indian state of Uttarakhand, nestled in the foothills of the Himalayas. The town is known for its serene and tranquil environment, making it a popular destination for spiritual seekers and yoga enthusiasts.",
     longDesc:

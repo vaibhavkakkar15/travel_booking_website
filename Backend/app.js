@@ -9,7 +9,6 @@ const LocalStrategy = require("passport-local");
 const User = require("./models/userScheama");
 
 const homeRoutes = require("./routes/homeRoutes");
-const loginRoutes = require("./routes/loginRoutes");
 const bookingRoutes = require("./routes/bookingRoutes");
 const packageRoutes = require("./routes/packagesRoute");
 const authRoutes = require("./routes/auth");
@@ -74,7 +73,6 @@ app.use((req, res, next) => {
 // seedDB2();
 //using routes
 app.use(homeRoutes);
-// app.use(loginRoutes);
 app.use(bookingRoutes);
 app.use(packageRoutes);
 app.use(authRoutes);

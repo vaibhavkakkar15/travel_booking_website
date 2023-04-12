@@ -1,18 +1,34 @@
 const express = require("express");
-const Package = require("../models/packageScheama");
-const Review = require("../models/reviewScheama");
 const router = express.Router();
+const Package = require("../models/packageSchema");
+const Review = require("../models/reviewScheama");
+const { validateReview } = require("../middleware");
 
-router.post("/packages/:id/review", async (req, res) => {
-  let { id } = req.params;
-  let { rating, comment } = req.body;
-  const package = await Package.findById(id);
-  const review = new Review({ rating, comment });
-  //adding review to package array
-  package.reviews.push(review);
-  await review.save();
-  await product.save();
-  res.redirect(`/packages/${id}`);
+router.post("/packages/:productid/review", validateReview, async (req, res) => {
+  try {
+    const { productid } = req.params;
+    const { rating, comment } = req.body;
+
+    const product = await Package.findById(productid);
+
+    const review = new Review({ rating, comment });
+
+    // Average Rating Logic
+    const newAverageRating =
+      (product.avgRating * product.reviews.length + parseInt(rating)) /
+      (product.reviews.length + 1);
+    product.avgRating = parseFloat(newAverageRating.toFixed(1));
+
+    product.reviews.push(review);
+
+    await review.save();
+    await product.save();
+
+    req.flash("success", "Added your review successfully!");
+    res.redirect(`/packages/${productid}`);
+  } catch (e) {
+    res.status(500).render("error", { err: e.message });
+  }
 });
 
 module.exports = router;

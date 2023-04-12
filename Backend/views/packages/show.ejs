@@ -1,5 +1,5 @@
 <% layout('layouts/boilerplate2.ejs') %>
-<section id="pac">
+<!-- <section id="pac">
   <div class="row container">
     <div class="col-md-6 sec mb-5">
       <div class="card" style="width: 18rem">
@@ -16,10 +16,10 @@
          </form>
         </div>
       </div>
-    </div>
+    </div> -->
 
     <!-- booking ui -->
-    <div class="col-mid-6 sec2 mb-5 mr-5">
+<!-- <div class="col-mid-6 sec2 mb-5 mr-5">
       <div class="container mt-5 booking">
         <div class="card">
           <div class="card-header">Book Now</div>
@@ -61,6 +61,93 @@
               </div>
               <button type="submit" class="btn btn-primary">Book Now</button>
             </form>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div> -->
+
+
+  <div class="container-fluid row">
+    <div id="booking" class="section" style="background-image: url(<%=package.img%>)">
+      <div class="section-center">
+        <div class="container">
+          <div class="row d-flex flex-sm-wrap">
+            <div class="col-md-4 col-md-pull-7">
+              <div class="booking-form">
+                <form>
+                  <div class="form-group">
+                    <span class="form-label">Your Destination</span>
+                    <input class="form-control" type="text" placeholder="Enter a destination or hotel name" value="<%=package.name%>" readonly>
+                  </div>
+                  <div class="row">
+                    <div class="col-sm-6">
+                      <div class="form-group">
+                        <span class="form-label">Starting Date</span>
+                        <input class="form-control" type="date" required>
+                      </div>
+                    </div>
+                    <div class="col-sm-6">
+                      <div class="form-group">
+                        <span class="form-label">Ending Date</span>
+                        <input class="form-control" type="date" required>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="row">
+            
+                    <div class="col-sm-4">
+                      <div class="form-group">
+                        <span class="form-label">Adults</span>
+                        <select class="form-control">
+                          <option>0</option>
+                          <option>1</option>
+                          <option>2</option>
+                          <option>3</option>
+                          <option>4</option>
+                          <option>5</option>
+                          <option>6</option>
+                          <option>7</option>
+                          <option>8</option>
+                          <option>9</option>
+                          <option>10</option>
+                        </select>
+                        <span class="select-arrow"></span>
+                      </div>
+                    </div>
+                    <div class="col-sm-4">
+                      <div class="form-group">
+                        <span class="form-label">Children</span>
+                        <select class="form-control">
+                          <option>0</option>
+                          <option>1</option>
+                          <option>2</option>
+                          <option>3</option>
+                          <option>4</option>
+                          <option>5</option>
+                          <option>6</option>
+                          <option>7</option>
+                          <option>8</option>
+                          <option>9</option>
+                          <option>10</option>
+                        </select>
+                        <span class="select-arrow"></span>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="form-btn">
+                    <button class="submit-btn">Book Now</button>
+                  </div>
+                </form>
+              </div>
+            </div>
+            <div class="col-md-7 col-md-push-5 ml-5">
+              <div class="booking-cta pl-5">
+                <h1><%=package.name%></h1>
+                <p><%=package.desc%>
+                </p>
+              </div>
+            </div>
           </div>
         </div>
       </div>

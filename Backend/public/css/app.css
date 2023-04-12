@@ -41,7 +41,7 @@ main.container-fluid {
   display: flex;
   align-items: center;
   justify-content: flex-start;
-  background-color: black;
+  background-color: #ffff;
   height: 100vh;
   width: 100%;
 }
@@ -177,56 +177,3 @@ footer {
   }
 }
 
-.scroll-banner {
-  position: absolute;
-  bottom: 0;
-  left: 50%;
-  transform: translateX(-50%);
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  color: #fff;
-  font-size: 20px;
-  font-weight: bold;
-  text-transform: uppercase;
-  letter-spacing: 1px;
-  opacity: 0;
-  animation: scrollBanner 2s ease-in-out infinite;
-}
-
-.scroll-banner p {
-  margin-bottom: 10px;
-}
-
-.scroll-banner i {
-  font-size: 40px;
-  animation: scrollDown 1s ease-in-out infinite;
-}
-
-@keyframes scrollBanner {
-  0% {
-    opacity: 0;
-    transform: translateY(0);
-  }
-  50% {
-    opacity: 1;
-    transform: translateY(50%);
-  }
-  100% {
-    opacity: 0;
-    transform: translateY(100%);
-  }
-}
-
-@keyframes scrollDown {
-  0% {
-    transform: translateY(0);
-  }
-  50% {
-    transform: translateY(10px);
-  }
-  100% {
-    transform: translateY(0);
-  }
-}

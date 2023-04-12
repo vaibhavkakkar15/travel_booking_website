@@ -1,10 +1,11 @@
 const { default: mongoose, trusted } = require("mongoose");
+const Review = require("./reviewScheama");
 
 const packageSchema = new mongoose.Schema({
   name: {
     type: String,
     trim: true,
-    require: true,
+    required: true,
   },
   img: {
     type: String,
@@ -26,12 +27,27 @@ const packageSchema = new mongoose.Schema({
     type: String,
     trim: true,
   },
+  avgRating: {
+    type: Number,
+    default: 0,
+  },
+  author: {
+    type: mongoose.Schema.Types.ObjectId,
+    ref: "User",
+  },
   reviews: [
     {
       type: mongoose.Schema.Types.ObjectId,
       ref: "Review",
     },
   ],
+});
+
+// Mongoose middleware function to delete all the associated reviews on a product
+packageSchema.post("findOneAndDelete", async function (package) {
+  if (package.reviews.length > 0) {
+    await Review.deleteMany({ _id: { $in: package.reviews } });
+  }
 });
 
 let Package = mongoose.model("Package", packageSchema);

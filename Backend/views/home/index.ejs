@@ -11,7 +11,6 @@
   </div>
 </header>
 
-
 <link
   href="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css"
   rel="stylesheet"
@@ -28,22 +27,25 @@
   crossorigin="anonymous"
 />
 <div class="container packages mt-5">
-  <h3 class="pb-3 mb-4 font-italic border-bottom text-center mb-5">
+  <h3 class="pb-3 mb-4 font-italic border-bottom text-center mb-5 text-dark">
     Explore Our Packages
   </h3>
   <div class="row">
     <% for(let item of packages){ %>
     <div class="col-md-6">
-      <div class="card flex-md-row mb-4 shadow-sm h-md-250">
+      <div
+        class="card flex-md-row mb-4 shadow-sm h-md-250"
+        style="min-height: 30rem;"
+      >
         <div class="card-body d-flex flex-column align-items-start">
           <strong class="d-inline-block mb-2 text-primary"
-            ><%=item.name%></strong
+            ><h4><%=item.name%></h4></strong
           >
 
-          <div class="mb-1 text-muted small"><%=item.price%></div>
-          <p class="card-text mb-auto" minlength="5" maxlength="25">
-            <%=item.desc%>
-          </p>
+          <div class="mb-1 text-muted small">
+            <h6><b>₹</b> <%=item.price%> /-</h6>
+          </div>
+          <p class="card-text mb-auto" maxlength="20"><%=item.desc%></p>
           <a
             class="btn btn-outline-primary btn-sm mt-4"
             role="button"
@@ -52,14 +54,21 @@
           >
         </div>
         <img
-          class="card-img-right flex-auto d-none d-lg-block"
+          class="card-img-right flex-auto d-none d-lg-block ml-3"
           alt="Thumbnail [200x250]"
           src="<%= item.img %>"
-          style="width: 200px; height: 250px"
+          style="
+            width: 15rem;
+            height: 20rem;
+            position: relative;
+            top: 2rem;
+            right: 1rem;
+            border-radius: 10px;
+          "
         />
       </div>
     </div>
     <% } %>
   </div>
-  <section><%-include("../contact/contactus.ejs")%></section>
+  <div class="row mt-5"><%-include("../contact/contactus.ejs")%></div>
 </div>
