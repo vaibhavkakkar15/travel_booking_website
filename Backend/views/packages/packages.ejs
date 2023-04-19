@@ -1,48 +1,42 @@
 <% layout('layouts/boilerplate2.ejs') %>
 
-<link
-  href="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css"
-  rel="stylesheet"
-  id="bootstrap-css"
-/>
-<script src="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.min.js"></script>
-<script src="//cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
-<!------ Include the above in your HEAD tag ---------->
-
-<link
-  rel="stylesheet"
-  href="https://use.fontawesome.com/releases/v5.2.0/css/all.css"
-  integrity="sha384-hWVjflwFxL6sNzntih27bfxkr27PmbbK/iSvJ+a4+0owXq79v+lsFkW54bOGbiDQ"
-  crossorigin="anonymous"
-/>
-<div class="container">
-  <h3 class="pb-3 mb-4 font-italic border-bottom">Card Styles</h3>
-  <div class="row">
-    <% for(let item of packages){ %>
-    <div class="col-md-6">
-      <div class="card flex-md-row mb-4 shadow-sm h-md-250">
-        <div class="card-body d-flex flex-column align-items-start">
-          <strong class="d-inline-block mb-2 text-primary"
-            ><%=item.name%></strong
-          >
-
-          <div class="mb-1 text-muted small">Nov 12</div>
-          <p class="card-text mb-auto"><%=item.desc%></p>
-          <a
-            class="btn btn-outline-primary btn-sm"
-            role="button"
-            href="/packages/<%=item._id%>"
-            >Continue reading</a
-          >
+<div class="container mb-5">
+  <div class="container packages">
+    <h1
+      class="display-4 mb-5 mt-5"
+      style="font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif"
+    >
+      Explore Our Packages
+    </h1>
+    <section id="gallery">
+      <div class="container">
+        <div class="row">
+          <%for(let item of packages){%>
+          <div class="col-lg-4 col-sm-8 mb-4">
+            <div class="card" style="height: 700px">
+              <img
+                src="<%=item.img%>"
+                alt=""
+                class="card-img-top"
+                style="height: 340px"
+              />
+              <div class="card-body">
+                <h3 class="card-title"><%=item.name%></h3>
+                <p class="card-text"><%=item.desc%></p>
+                <a
+                  href="/packages/<%=item._id%>"
+                  class="btn btn-outline-success btn-sm"
+                  >Details</a
+                >
+                <a href="" class="btn btn-outline-danger btn-sm"
+                  ><i class="far fa-heart"></i
+                ></a>
+              </div>
+            </div>
+          </div>
+          <%}%>
         </div>
-        <img
-          class="card-img-right flex-auto d-none d-lg-block"
-          alt="Thumbnail [200x250]"
-          src="<%= item.img %>"
-          style="width: 200px; height: 250px"
-        />
       </div>
-    </div>
-    <% } %>
+    </section>
   </div>
 </div>

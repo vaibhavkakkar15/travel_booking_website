@@ -2,6 +2,7 @@ const express = require("express");
 const router = express.Router();
 const User = require("../models/userScheama");
 const passport = require("passport");
+const { isLoggedIn } = require("../middleware");
 
 router.get("/register", (req, res) => {
   res.render("auth/signup");
@@ -12,7 +13,6 @@ router.post("/register", async (req, res) => {
     let { email, username, password, role } = req.body;
     const user = new User({ email, username, role });
     const newUser = await User.register(user, password);
-    // res.send(newUser);
     req.login(newUser, function (err) {
       if (err) {
         return next(err);
@@ -46,10 +46,11 @@ router.post(
 
 router.get("/logout", (req, res) => {
   () => {
+    console.log("logout krra hu");
     req.logout();
   };
   req.flash("success", "goodbye friend");
-  res.redirect("/login");
+  res.redirect("/home");
 });
 
 module.exports = router;

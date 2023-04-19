@@ -16,8 +16,7 @@ const packageSchema = new mongoose.Schema({
   price: {
     type: Number,
     min: 0,
-    default: null,
-    required: true,
+    default: 0,
   },
   desc: {
     type: String,

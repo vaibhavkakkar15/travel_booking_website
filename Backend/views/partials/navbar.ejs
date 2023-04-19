@@ -1,6 +1,6 @@
 <nav class="navbar navbar-expand-lg" id="navbar">
   <div class="container-fluid">
-    <a class="navbar-brand px-4" href="/home"
+    <a class="navbar-brand px-2" href="/home"
       ><h2 class="text-light" id="brand">DestinationDreams</h2></a
     >
     <button
@@ -14,8 +14,8 @@
     >
       <span class="navbar-toggler-icon"></span>
     </button>
-    <div class="collapse navbar-collapse" id="navbarNavDropdown">
-      <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+    <div class="collapse navbar-collapse " id="navbarNavDropdown">
+      <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
         <li class="nav-item px-3">
           <a
             class="nav-link font-weight-bold textsize active text-light"
@@ -32,30 +32,32 @@
           >
         </li>
         <%if(currentUser && currentUser.role === 'seller'){%>
-        <li class="nav-item">
-          <a
-            class="nav-link"
-            href="/products/new"
-            tabindex="-1"
-            aria-disabled="true"
-            >New</a
-          >
-        </li>
+        <div class="dropdown">
+          <button class="btn btn-secondary dropdown-toggle bg-transparent text-light border-0 py-2" type="button" id="dropdownMenuButton1" data-bs-toggle="dropdown" aria-expanded="false">
+            Admin
+          </button>
+          <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton1">
+            <li><a class="dropdown-item" href="/packages/new">New</a></li>
+            <li><a class="dropdown-item" href="">Edit</a></li>
+            <li><a class="dropdown-item" href="#">Delete</a></li>
+          </ul>
+        </div>
         <%}%>
+   
 
             <div class="navbar-nav ml-auto">
 
         <%if(!currentUser){%>
-          <a href="/login" class="nav-link">Login</a> 
+          <a href="/login" class="nav-link font-weight-bold textsize text-light">Login</a> 
         <%} else{%>
-          <a href="#" class="nav-link text-capitalize">Hello <%=currentUser.username%></i> 
-            <a href="/user/cart" class="nav-link"><i class="fas fa-shopping-cart"></i> 
+          <a href="#" class="nav-link text-capitalize text-light">Hello <%=currentUser.username%></i> 
+            <a href="/user/cart" class="nav-link text-light"><i class="fas fa-shopping-cart"></i> 
             <sup><span class="badge bg-danger"><%=currentUser.cart.length%></span></sup> 
           </a>
-          <a href="/logout" class="nav-link">Logout</a>
+          <a href="/logout" class="nav-link text-light">Logout</a>
         <%}%>
 
-              
+      </ul>   
       </div>
     </div>
   </div>

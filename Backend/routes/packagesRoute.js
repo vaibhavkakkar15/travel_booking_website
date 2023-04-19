@@ -42,7 +42,7 @@ router.post(
         img,
         price: parseFloat(price),
         desc,
-        author: req.user_id,
+        author: req.user._id,
       });
       req.flash("success", "Successfully added a new Package!");
       res.redirect("/packages");
@@ -52,8 +52,8 @@ router.post(
   }
 );
 
-//for reviews
-router.get("/products/:id", isLoggedIn, async (req, res) => {
+//for showing
+router.get("/packages/:id", isLoggedIn, async (req, res) => {
   try {
     const { id } = req.params;
     const package = await Package.findById(id).populate("reviews");
@@ -63,18 +63,7 @@ router.get("/products/:id", isLoggedIn, async (req, res) => {
   }
 });
 
-//show a particular package
-//show the package
-router.get("/packages/:id", isLoggedIn, async (req, res) => {
-  try {
-    const { id } = req.params;
-    const package = await Package.findById(id);
-    const gallery = await Gallery.findById(id);
-    res.render("packages/show", { package, gallery });
-  } catch (e) {
-    res.status(500).render("error", { err: e.message });
-  }
-});
+
 
 //edit a package
 
@@ -85,8 +74,8 @@ router.get(
   async (req, res) => {
     try {
       let { id } = req.params;
-      let foundPackage = await Package.findById(id);
-      res.render("packages/edit", { foundPackage });
+      let package = await Package.findById(id);
+      res.render("packages/edit", { package });
     } catch (e) {
       res.status(500).render("error", { err: e.message });
     }

@@ -1,7 +1,7 @@
 const { packageSchema } = require("./schema");
 const { reviewScheama } = require("./schema");
 const passport = require("passport");
-const package = require("./models/packageSchema");
+const Package = require("./models/packageSchema");
 
 const isLoggedIn = (req, res, next) => {
   // console.log(req.originalUrl);
@@ -50,8 +50,8 @@ const isProductAuthor = async (req, res, next) => {
   //to get the id of thatparticular product
   let { id } = req.params;
   const package = await Package.findById(id);
-  console.log(package.author);
-  console.log(req.user);
+  // console.log(package.author);
+  // console.log(req.user);
   if (!package.author.equals(req.user._id)) {
     req.flash("error", "you donot have the permission to do that");
     return res.redirect(`/package/${id}`);
