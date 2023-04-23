@@ -1,4 +1,7 @@
 <% layout('layouts/boilerplate.ejs') %>
+<head>
+  <link rel="stylesheet" href="/css/booking2.css" />
+</head>
 <header class="parallax-section container-fluid" style="width: 100%">
   <div id="banner-image">
     <div class="home_header_info" id="header">
@@ -10,19 +13,94 @@
     </div>
   </div>
 </header>
+
+<!-- booking form  -->
+<div class="row">
+  <div id="booking" class="section">
+    <div class="section-center">
+      <div class="container">
+        <div class="row">
+          <div class="booking-form">
+            <form>
+              <div class="row no-margin">
+                <div class="col-md-3">
+                  <div class="form-group">
+                    <span class="form-label">Destination</span>
+                    <input
+                      class="form-control"
+                      type="text"
+                      placeholder="Country, ZIP, city..."
+                    />
+                  </div>
+                </div>
+                <div class="col-md-6">
+                  <div class="row no-margin">
+                    <div class="col-md-5">
+                      <div class="form-group">
+                        <span class="form-label">Check In</span>
+                        <input class="form-control" type="date" required />
+                      </div>
+                    </div>
+                    <div class="col-md-5">
+                      <div class="form-group">
+                        <span class="form-label">Check out</span>
+                        <input class="form-control" type="date" required />
+                      </div>
+                    </div>
+                    <div class="col-md-2">
+                      <div class="form-group">
+                        <span class="form-label">Guests</span>
+                        <select class="form-control">
+                          <option>1</option>
+                          <option>2</option>
+                          <option>3</option>
+                        </select>
+                        <span class="select-arrow"></span>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div class="col-md-3">
+                  <div class="form-btn">
+                    <button class="submit-btn">Check availability</button>
+                  </div>
+                </div>
+              </div>
+            </form>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- packages section -->
 <div class="container-fluid">
   <div class="container packages">
     <h1
       class="display-4 mb-5 mt-5"
       style="font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif"
     >
-      Explore Our Packages
+      <img
+        src="https://img.freepik.com/free-vector/airplane-sky_1308-31202.jpg?w=740&t=st=1681982316~exp=1681982916~hmac=fd4f9695f55528259a3c44a498c70505b8131cb8c6aa6d64d2ec68b7f33dd8bf"
+        style="width: 100px; height: 100px; background: transparent"
+      />Explore Our Packages
     </h1>
     <div class="container">
       <div class="row">
         <%for(let item of packages){%>
         <div class="col-lg-4 col-sm-8 mb-4">
-          <div class="card" style="height: 700px">
+          <div
+            class="card "
+            data-aos="fade-up"
+            data-aos-duration="3000"
+     
+            style="
+              height: 700px;
+              border-radius: 5px;
+              box-shadow: 1px 2px 3px 4px rgba(12, 12, 12, 0.2);
+            "
+          >
             <img
               src="<%=item.img%>"
               alt=""
@@ -49,191 +127,235 @@
   </div>
 </div>
 
-<!-- Carousel -->
 
-<div class="row my-5 caro pt-5 container1">
-  <!-- Carousel wrapper -->
-  <div
-    id="carouselMaterialStyle"
-    class="carousel slide carousel-fade"
-    data-mdb-ride="carousel"
+
+<!-- Services -->
+
+<div class="row">
+  <div class="bb display-3"><img src="https://img.freepik.com/free-vector/customer-support-flat-design-illustration_23-2148889374.jpg?w=740&t=st=1682233464~exp=1682234064~hmac=c56a83be6e7ba588a98c50e8e17719717e201baf69fe182c1b84e9807a387a80" alt="" style="height: 100px; width: 100px;"> Services We Offer</div>
+  <div class="containerX">
+    <div class="card1">
+      <h3 class="title">Effortless Bookings😊</h3>
+      <div class="bar">
+        <div class="emptybar"></div>
+        <div class="filledbar"></div>
+      </div>
+      <div class="circle">
+        <svg version="1.1" xmlns="http://www.w3.org/2000/svg">
+        <circle class="stroke" cx="60" cy="60" r="50"/>
+      </svg>
+      </div>
+    </div>
+    <div class="card1">
+      <h3 class="title">Budjet Trips</h3>
+      <div class="bar">
+        <div class="emptybar"></div>
+        <div class="filledbar"></div>
+      </div>
+      <div class="circle">
+        <svg version="1.1" xmlns="http://www.w3.org/2000/svg">
+        <circle class="stroke" cx="60" cy="60" r="50"/>
+      </svg>
+      </div>
+    </div>
+    <div class="card1">
+      <h3 class="title">Customize trips</h3>
+      <div class="bar">
+        <div class="emptybar"></div>
+        <div class="filledbar"></div>
+      </div>
+      <div class="circle">
+        <svg version="1.1" xmlns="http://www.w3.org/2000/svg">
+        <circle class="stroke" cx="60" cy="60" r="50"/>
+      </svg>
+      </div>
+    </div>
+    <div class="card1">
+      <h3 class="title">Smooth Bookings</h3>
+      <div class="bar">
+        <div class="emptybar"></div>
+        <div class="filledbar"></div>
+      </div>
+      <div class="circle">
+        <svg version="1.1" xmlns="http://www.w3.org/2000/svg">
+        <circle class="stroke" cx="60" cy="60" r="50"/>
+      </svg>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+<!-- gallery -->
+
+<!-- Carousel wrapper -->
+<div class="row carr">
+<div
+  id="carouselVideoExample"
+  class="carousel slide carousel-fade"
+  data-mdb-ride="carousel"
+>
+  <!-- Indicators -->
+  <div class="carousel-indicators">
+    <button
+      type="button"
+      data-mdb-target="#carouselVideoExample"
+      data-mdb-slide-to="0"
+      class="active"
+      aria-current="true"
+      aria-label="Slide 1"
+    ></button>
+    <button
+      type="button"
+      data-mdb-target="#carouselVideoExample"
+      data-mdb-slide-to="1"
+      aria-label="Slide 2"
+    ></button>
+    <button
+      type="button"
+      data-mdb-target="#carouselVideoExample"
+      data-mdb-slide-to="2"
+      aria-label="Slide 3"
+    ></button>
+  </div>
+
+  <!-- Inner -->
+  <div class="carousel-inner">
+    <!-- Single item -->
+    <div class="carousel-item  active" style="width:100%;">
+      <video class="img-fluid" autoplay loop muted>
+        <source src="https://mdbcdn.b-cdn.net/img/video/Tropical.mp4" type="video/mp4" />
+      </video>
+      <div class="carousel-caption d-none d-md-block">
+        <h5>First slide label</h5>
+        <p>
+          Nulla vitae elit libero, a pharetra augue mollis interdum.
+        </p>
+      </div>
+    </div>
+
+  <!-- Single item -->
+    <div class="carousel-item" style="width:100%;">
+      <video class="img-fluid" autoplay loop muted>
+        <source src="https://mdbcdn.b-cdn.net/img/video/forest.mp4" type="video/mp4" />
+      </video>
+      <div class="carousel-caption d-none d-md-block">
+        <h5>Second slide label</h5>
+        <p>
+          Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+        </p>
+      </div>
+    </div>
+
+    <!-- Single item -->
+    <div class="carousel-item" style="width:100%;">
+      <video class="img-fluid" autoplay loop muted>
+        <source
+          src="https://mdbcdn.b-cdn.net/img/video/Agua-natural.mp4"
+          type="video/mp4"
+        />
+      </video>
+      <div class="carousel-caption d-none d-md-block">
+        <h5>Third slide label</h5>
+        <p>
+          Praesent commodo cursus magna, vel scelerisque nisl consectetur.
+        </p>
+      </div>
+    </div>
+  </div>
+  <!-- Inner -->
+
+  <!-- Controls -->
+  <button
+    class="carousel-control-prev"
+    type="button"
+    data-mdb-target="#carouselVideoExample"
+    data-mdb-slide="prev"
   >
-    <!-- Indicators -->
-    <div class="carousel-indicators">
-      <button
-        type="button"
-        data-mdb-target="#carouselMaterialStyle"
-        data-mdb-slide-to="0"
-        class="active"
-        aria-current="true"
-        aria-label="Slide 1"
-      ></button>
-      <button
-        type="button"
-        data-mdb-target="#carouselMaterialStyle"
-        data-mdb-slide-to="1"
-        aria-label="Slide 2"
-      ></button>
-      <button
-        type="button"
-        data-mdb-target="#carouselMaterialStyle"
-        data-mdb-slide-to="2"
-        aria-label="Slide 3"
-      ></button>
-    </div>
-
-    <!-- Inner -->
-    <div class="carousel-inner rounded-5 shadow-4-strong">
-      <!-- Single item -->
-      <div class="carousel-item active">
-        <img
-          src="https://mdbcdn.b-cdn.net/img/Photos/Slides/img%20(15).webp"
-          class="d-block w-100"
-          alt="Sunset Over the City"
-        />
-        <div class="carousel-caption d-none d-md-block">
-          <h5>First slide label</h5>
-          <p>Nulla vitae elit libero, a pharetra augue mollis interdum.</p>
-        </div>
-      </div>
-
-      <!-- Single item -->
-      <div class="carousel-item">
-        <img
-          src="https://mdbcdn.b-cdn.net/img/Photos/Slides/img%20(22).webp"
-          class="d-block w-100"
-          alt="Canyon at Nigh"
-        />
-        <div class="carousel-caption d-none d-md-block">
-          <h5>Second slide label</h5>
-          <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
-        </div>
-      </div>
-
-      <!-- Single item -->
-      <div class="carousel-item">
-        <img
-          src="https://mdbcdn.b-cdn.net/img/Photos/Slides/img%20(23).webp"
-          class="d-block w-100"
-          alt="Cliff Above a Stormy Sea"
-        />
-        <div class="carousel-caption d-none d-md-block">
-          <h5>Third slide label</h5>
-          <p>
-            Praesent commodo cursus magna, vel scelerisque nisl consectetur.
-          </p>
-        </div>
-      </div>
-    </div>
-    <!-- Inner -->
-
-    <!-- Controls -->
-    <button
-      class="carousel-control-prev"
-      type="button"
-      data-mdb-target="#carouselMaterialStyle"
-      data-mdb-slide="prev"
-    >
-      <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-      <span class="visually-hidden">Previous</span>
-    </button>
-    <button
-      class="carousel-control-next"
-      type="button"
-      data-mdb-target="#carouselMaterialStyle"
-      data-mdb-slide="next"
-    >
-      <span class="carousel-control-next-icon" aria-hidden="true"></span>
-      <span class="visually-hidden">Next</span>
-    </button>
-  </div>
-  <!-- Carousel wrapper -->
+    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+    <span class="visually-hidden">Previous</span>
+  </button>
+  <button
+    class="carousel-control-next"
+    type="button"
+    data-mdb-target="#carouselVideoExample"
+    data-mdb-slide="next"
+  >
+    <span class="carousel-control-next-icon" aria-hidden="true"></span>
+    <span class="visually-hidden">Next</span>
+  </button>
 </div>
 
-<div class="row my-5 dev">
-  <!-- CONTROLS -->
-  <div class="text-center text-dark display-3">Developers</div>
-  <input
-    type="radio"
-    checked
-    id="radio-front"
-    name="select-face"
-    style="
-      width: 5px;
-      height: 5px;
-      border-radius: 50%;
-      background-color: rgb(0, 0, 83);
-    "
-  />
-  <input
-    type="radio"
-    id="radio-left"
-    name="select-face"
-    style="
-      width: 5px;
-      height: 5px;
-      border-radius: 50%;
-      background-color: rgb(0, 0, 83);
-    "
-  />
-  <input
-    type="radio"
-    id="radio-right"
-    name="select-face"
-    style="
-      width: 5px;
-      height: 5px;
-      border-radius: 50%;
-      background-color: rgb(0, 0, 83);
-    "
-  />
-  <input
-    type="radio"
-    id="radio-top"
-    name="select-face"
-    style="
-      width: 5px;
-      height: 5px;
-      border-radius: 50%;
-      background-color: rgb(0, 0, 83);
-    "
-  />
-  <input
-    type="radio"
-    id="radio-bottom"
-    name="select-face"
-    style="
-      width: 5px;
-      height: 5px;
-      border-radius: 50%;
-      background-color: rgb(0, 0, 83);
-    "
-  />
-  <input
-    type="radio"
-    id="radio-back"
-    name="select-face"
-    style="
-      width: 5px;
-      height: 5px;
-      border-radius: 50%;
-      background-color: rgb(0, 0, 83);
-    "
-  />
+<!-- Carousel wrapper -->
 
-  <div class="seprator"></div>
+</div>
 
-  <div class="space3d">
-    <div class="_3dbox">
-      <div class="_3dface _3dface--front"></div>
-      <div class="_3dface _3dface--top"></div>
-      <div class="_3dface _3dface--bottom"></div>
-      <div class="_3dface _3dface--left"></div>
-      <div class="_3dface _3dface--right"></div>
-      <div class="_3dface _3dface--back"></div>
-    </div>
+<!-- developers -->
+
+<div class="heading">
+<img src="https://img.freepik.com/free-vector/developer-activity-concept-illustration_114360-2801.jpg?w=740&t=st=1681994092~exp=1681994692~hmac=daa3ebaacfcfda1f05cbdb883ab53b5a6697169fb0ca1f0e07a2b5a6b3ef6824" alt="" style="width: 100px; height: 100px;">
+<h1 class="display-3">
+  <b>Developers</b>
+</h1>
+</div>
+<div class="dev">
+
+<div class="image-area">
+  <div class="img-wrapper">
+    <img src="../images/Vaibhav.jpg">
+    <h2>Vaibhav Kakkar</h2>
+    <ul>
+      <li><a href="https://github.com/vaibhavkakkar15"><i class="fab fa-github"></i></a></li>
+      <li><a href="https://www.instagram.com/i.vaibhav_kakkar/"><i class="fab fa-instagram"></i></a></li>
+      <li><a href="https://twitter.com/atuljustano"><i class="fab fa-twitter"></i></a></li>
+      <li><a href="https://www.youtube.com/channel/UCf-KfxuY8PZBSD_8RW2nYsw"><i class="fab fa-youtube"></i></a></li>
+    </ul>
   </div>
 </div>
-<div class="row mt-5" style="margin-bottom: 120px">
-  <%-include("../contact/contactus.ejs")%>
+
+<div class="image-area">
+  <div class="img-wrapper">
+    <img src="../images/hardik.jpg">
+    <h2>Hardik Chopra</h2>
+    <ul>
+      <li><a href="https://github.com/atuljustano"><i class="fab fa-github"></i></a></li>
+      <li><a href="https://www.instagram.com/atulkprajapati2000/"><i class="fab fa-instagram"></i></a></li>
+      <li><a href="https://twitter.com/atuljustano"><i class="fab fa-twitter"></i></a></li>
+      <li><a href="https://www.youtube.com/channel/UCf-KfxuY8PZBSD_8RW2nYsw"><i class="fab fa-youtube"></i></a></li>
+    </ul>
+  </div>
+</div>
+
+<div class="image-area">
+  <div class="img-wrapper">
+    <img src="../images/vishal.jpg" alt="Atul Prajapati">
+    <h2>Vishal Kumar</h2>
+    <ul>
+      <li><a href="https://github.com/atuljustano"><i class="fab fa-github"></i></a></li>
+      <li><a href="https://www.instagram.com/atulkprajapati2000/"><i class="fab fa-instagram"></i></a></li>
+      <li><a href="https://twitter.com/atuljustano"><i class="fab fa-twitter"></i></a></li>
+      <li><a href="https://www.youtube.com/channel/UCf-KfxuY8PZBSD_8RW2nYsw"><i class="fab fa-youtube"></i></a></li>
+    </ul>
+  </div>
+</div>
+
+<div class="image-area">
+  <div class="img-wrapper">
+    <img src="../images/sukhi.jpg" alt="Atul Prajapati">
+    <h2>Sukhinderjeet</h2>
+    <ul>
+      <li><a href="https://github.com/atuljustano"><i class="fab fa-github"></i></a></li>
+      <li><a href="https://www.instagram.com/atulkprajapati2000/"><i class="fab fa-instagram"></i></a></li>
+      <li><a href="https://twitter.com/atuljustano"><i class="fab fa-twitter"></i></a></li>
+      <li><a href="https://www.youtube.com/channel/UCf-KfxuY8PZBSD_8RW2nYsw"><i class="fab fa-youtube"></i></a></li>
+    </ul>
+  </div>
+</div>
+
+</div>
+
+<!-- contact us -->
+  <div class="row mt-5" style="margin-bottom: 120px">
+    <%-include("../contact/contactus.ejs")%>
+  </div>
 </div>

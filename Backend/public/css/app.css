@@ -7,15 +7,15 @@ main {
   display: flex;
   flex-direction: column;
   justify-content: space-between;
-  width: 100vw;
-  /* margin: 0;
-  padding: 0; */
+  width: 100%;
 }
 
 body {
   width: 100%;
   height: 100%;
   overflow-x: hidden;
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif !important;
+  background-color: #ffffff;
 }
 
 #navbar {
@@ -49,9 +49,9 @@ body {
   width: 100%;
 }
 
-.caro{
+.caro {
   width: 100%;
-  height:100vh;
+  height: 100%;
 }
 
 #navbar2 {
@@ -74,6 +74,9 @@ body {
       hsl(218, 41%, 19%) 80%,
       transparent 100%
     );
+  display: flex;
+  flex-direction: column;
+  height: 50px;
   /* margin-bottom: 10rem; */
 }
 
@@ -82,12 +85,14 @@ body {
 }
 
 #banner-image {
-  background: url("https://images.pexels.com/photos/730981/pexels-photo-730981.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1");
+  /* background: url("https://images.pexels.com/photos/730981/pexels-photo-730981.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1"); */
+  background: url("../images/background.png");
   background-size: cover;
   background-position: center;
   color: #ffffff;
   height: 100vh;
   text-align: center;
+  width: 100%;
 }
 
 #header {
@@ -95,7 +100,7 @@ body {
   align-items: center;
   justify-content: center;
   text-align: center;
-  color: white;
+  color: #ffff;
   letter-spacing: 4px;
   text-transform: uppercase;
   font-weight: bold;
@@ -118,31 +123,13 @@ body {
 
 .dev {
   display: flex;
-  /* align-items: center; */
   justify-content: center;
   width: 100%;
-  /* background-color: hsl(218, 41%, 15%);
-  background-image: radial-gradient(
-      650px circle at 0% 0%,
-      hsl(218, 41%, 35%) 15%,
-      hsl(218, 41%, 30%) 35%,
-      hsl(218, 41%, 20%) 75%,
-      hsl(218, 41%, 19%) 80%,
-      transparent 100%
-    ),
-    radial-gradient(
-      1250px circle at 100% 100%,
-      hsl(218, 41%, 45%) 15%,
-      hsl(218, 41%, 30%) 35%,
-      hsl(218, 41%, 20%) 75%,
-      hsl(218, 41%, 19%) 80%,
-      transparent 100%
-    ); */
-  height: 100vh;
+  height: 100%;
   color: #000;
+  margin: auto;
+  flex-wrap: wrap;
 }
-
-
 
 #pac {
   width: 100%;
@@ -155,7 +142,7 @@ body {
   top: 7%;
 }
 
-.sec {
+/* .sec {
   width: 50%;
   height: 100%;
   display: flex;
@@ -168,8 +155,29 @@ body {
   display: flex;
   justify-content: center;
   align-items: center;
+} */
+
+.rev {
+  height: 100%;
+  width: 100%;
+  margin-bottom: 100px;
 }
 
+.carr {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  margin: auto;
+  
+}
+/* .carousel-inner {
+  position: relative;
+  width: 100%;
+  overflow: hidden;
+  padding: 128px;
+  margin: auto;
+} */
 .booking {
   background-color: hsl(218, 41%, 15%);
   background-image: radial-gradient(
@@ -188,6 +196,110 @@ body {
       hsl(218, 41%, 19%) 80%,
       transparent 100%
     );
+}
+
+.containerX {
+  position: relative;
+  height: 60vh;
+  width: 600px;
+  top: 60px;
+  left: calc(50% - 300px);
+  display: flex;
+  align-items: center;
+}
+
+.card1 {
+  display: flex;
+  height: 280px;
+  width: 600px;
+  background-color: #17141d;
+  border-radius: 10px;
+  box-shadow: -1rem 0 3rem #000;
+  /*   margin-left: -50px; */
+  transition: 0.4s ease-out;
+  position: relative;
+  left: 0px;
+}
+
+.card1:not(:first-child) {
+  margin-left: -50px;
+}
+
+.card1:hover {
+  transform: translateY(-20px);
+  transition: 0.4s ease-out;
+}
+
+.card1:hover ~ .card1 {
+  position: relative;
+  left: 50px;
+  transition: 0.4s ease-out;
+}
+
+.title {
+  color: white;
+  font-weight: 300;
+  position: absolute;
+  left: 20px;
+  top: 15px;
+}
+
+.bar {
+  position: absolute;
+  top: 100px;
+  left: 20px;
+  height: 5px;
+  width: 150px;
+}
+
+.emptybar {
+  background-color: #2e3033;
+  width: 100%;
+  height: 100%;
+}
+
+.filledbar {
+  position: absolute;
+  top: 0px;
+  z-index: 3;
+  width: 0px;
+  height: 100%;
+  background: rgb(0, 154, 217);
+  background: linear-gradient(
+    90deg,
+    rgba(0, 154, 217, 1) 0%,
+    rgba(217, 147, 0, 1) 65%,
+    rgba(255, 186, 0, 1) 100%
+  );
+  transition: 0.6s ease-out;
+}
+
+.card1:hover .filledbar {
+  width: 120px;
+  transition: 0.4s ease-out;
+}
+
+.circle {
+  position: absolute;
+  top: 150px;
+  left: calc(50% - 60px);
+}
+
+.stroke {
+  stroke: white;
+  stroke-dasharray: 360;
+  stroke-dashoffset: 360;
+  transition: 0.6s ease-out;
+}
+
+svg {
+  fill: #17141d;
+  stroke-width: 2px;
+}
+
+.card1:hover .stroke {
+  stroke-dashoffset: 100;
+  transition: 0.6s ease-out;
 }
 
 @media (max-width: 768px) {

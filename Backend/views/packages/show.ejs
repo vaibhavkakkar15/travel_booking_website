@@ -17,6 +17,7 @@
     </div> -->
 
 
+    <!-- Booking  -->
   <div class="container-fluid row">
     <div id="booking" class="section" style="background-image: url(<%=package.img%>)">
       <div class="section-center">
@@ -114,9 +115,11 @@
   </div>
 
 
-    <div class="col-lg-6">
+  <!-- review section -->
+
+    <div class="row rev">
       <h2 class="display-5">Leave your review</h2>
-      <form action="/packages/<%= package._id %>/review" method="POST">
+      <form action="/packages/<%= package._id %>" method="POST">
         <div class="mt-3">
           <label for="rate" class="form-lable">Rating:</label>
           <fieldset class="starability-basic">
