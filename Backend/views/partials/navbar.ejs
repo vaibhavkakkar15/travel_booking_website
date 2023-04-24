@@ -47,16 +47,19 @@
 
             <div class="navbar-nav ml-auto">
 
-        <%if(!currentUser){%>
-          <a href="/login" class="nav-link font-weight-bold textsize text-light">Login</a> 
-        <%} else{%>
-          <a href="#" class="nav-link text-capitalize text-light">Hello <%=currentUser.username%></i> 
-            <a href="/user/cart" class="nav-link text-light"><i class="fas fa-shopping-cart"></i> 
-            <sup><span class="badge bg-danger"><%=currentUser.cart.length%></span></sup> 
-          </a>
-          <a href="/logout" class="nav-link text-light">Logout</a>
-        <%}%>
-
+              <% if (!currentUser) { %>
+                <a href="/login" class="nav-link font-weight-bold textsize text-light">Login</a> 
+              <% } else { %>
+                <a href="#" class="nav-link text-capitalize text-light">Hello <%=currentUser.username%></i></a> 
+                <% if (currentUser.cart.length > 0) { %>
+                  <a href="/user/cart" class="nav-link text-light">
+                    <i class="fas fa-shopping-cart"></i>
+                    <sup><span class="badge bg-danger"><%=currentUser.cart.length%></span></sup>
+                  </a>
+                <% } %>
+                <a href="/logout" class="nav-link text-light">Logout</a>
+              <% } %>
+              
       </ul>   
       </div>
     </div>

@@ -4,28 +4,28 @@ const Package = require("../models/packageSchema");
 const Review = require("../models/reviewScheama");
 const { validateReview } = require("../middleware");
 
-router.post("/packages/:productid/review", validateReview, async (req, res) => {
+router.post("/packages/:packageId/review", validateReview, async (req, res) => {
   try {
-    const { productid } = req.params;
+    const { packageId } = req.params;
     const { rating, comment } = req.body;
 
-    const product = await Package.findById(productid);
+    const package = await Package.findById(packageId);
 
     const review = new Review({ rating, comment });
 
     // Average Rating Logic
     const newAverageRating =
-      (product.avgRating * product.reviews.length + parseInt(rating)) /
-      (product.reviews.length + 1);
-    product.avgRating = parseFloat(newAverageRating.toFixed(1));
+      (package.avgRating * package.reviews.length + parseInt(rating)) /
+      (package.reviews.length + 1);
+    package.avgRating = parseFloat(newAverageRating.toFixed(1));
 
-    product.reviews.push(review);
+    package.reviews.push(review);
 
     await review.save();
-    await product.save();
+    await package.save();
 
     req.flash("success", "Added your review successfully!");
-    res.redirect(`/packages/${productid}`);
+    res.redirect(`/packages/${packageId}`);
   } catch (e) {
     res.status(500).render("error", { err: e.message });
   }

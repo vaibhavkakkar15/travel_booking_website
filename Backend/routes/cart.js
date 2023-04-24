@@ -9,7 +9,7 @@ router.get("/user/cart", isLoggedIn, async (req, res) => {
   res.render("cart/cart", { user });
 });
 
-router.post("/user/:productId/add", isLoggedIn, async (req, res) => {
+router.post("/user/:packageId/add", isLoggedIn, async (req, res) => {
   let { packageId } = req.params;
   let userId = req.user._id;
   let package = await Package.findById(packageId);

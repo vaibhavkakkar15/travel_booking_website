@@ -45,12 +45,12 @@ router.post(
 );
 
 router.get("/logout", (req, res) => {
-  () => {
-    console.log("logout krra hu");
+  (err) => {
     req.logout();
   };
+
   req.flash("success", "goodbye friend");
-  res.redirect("/home");
+  res.redirect("/login");
 });
 
 module.exports = router;

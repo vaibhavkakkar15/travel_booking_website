@@ -1,40 +1,7 @@
-<% layout('layouts/boilerplate.ejs') %>
+<% layout('layouts/boilerplate') -%>
 
-<div class="conatiner">
-  <h1 class="mt-5 mb-4">My Cart</h1>
-  <% if(bookings.length === 0) {%>
-  <h1>Your Cart is Empty</h1>
-  <% }else{ %>
-  <table class="table">
-    <thead>
-      <tr>
-        <th>Start Date</th>
-        <th>End Date</th>
-        <th>Number of Guests</th>
-        <th>Total Price</th>
-      </tr>
-    </thead>
-    <tbody>
-      <% bookings.forEach(booking => { %>
-      <tr>
-        <td><%= booking.startDate %></td>
-        <td><%= booking.endDate %></td>
-        <td><%= booking.persons %></td>
-        <td>Rs <%= booking.price.toFixed(2) %></td>
-        <td>
-          Rs <%= (booking.numOfGuests * booking.packagePrice).toFixed(2) %>
-        </td>
-      </tr>
-      <% });%>
-      <tr>
-        <td colspan="4" class="text-end"><strong>Total:</strong></td>
-        <td>Rs<%= total.toFixed(2) %></td>
-      </tr>
-    </tbody>
-  </table>
-  <div class="text-end">
-    <a href="/" class="btn btn-secondary">Continue Shopping</a>
-    <a href="#" class="btn btn-primary">Checkout</a>
-  </div>
-  <% } %>
-</div>
+<ul>
+  <%for(let item of user.cart){%>
+  <li><%=item.name%> <%=item.price%></li>
+  <%}%>
+</ul>
