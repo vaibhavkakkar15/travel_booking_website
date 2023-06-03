@@ -1,0 +1,6 @@
+.bb {
+  background-image: url("../images/book.png");
+  background-size: cover;
+  height: 100%;
+  width: 100%;
+}

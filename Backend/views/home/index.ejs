@@ -21,15 +21,17 @@
       <div class="container">
         <div class="row">
           <div class="booking-form">
-            <form>
+            <form action="/booking" method="POST">
               <div class="row no-margin">
                 <div class="col-md-3">
                   <div class="form-group">
-                    <span class="form-label">Destination</span>
+                    <span class="form-label" for="place">Destination</span>
                     <input
                       class="form-control"
                       type="text"
+                      id="place"
                       placeholder="Country, ZIP, city..."
+                      name="destination"
                     />
                   </div>
                 </div>
@@ -37,14 +39,14 @@
                   <div class="row no-margin">
                     <div class="col-md-5">
                       <div class="form-group">
-                        <span class="form-label">Check In</span>
-                        <input class="form-control" type="date" required />
+                        <span class="form-label" for="startDate">Check In</span>
+                        <input class="form-control" type="date"  id="startDate" name="startDate" required />
                       </div>
                     </div>
                     <div class="col-md-5">
                       <div class="form-group">
-                        <span class="form-label">Check out</span>
-                        <input class="form-control" type="date" required />
+                        <span class="form-label" for="endDate">Check out</span>
+                        <input class="form-control" id="endDate" name="endDate" type="date" required />
                       </div>
                     </div>
                     <div class="col-md-2">
@@ -62,7 +64,7 @@
                 </div>
                 <div class="col-md-3">
                   <div class="form-btn">
-                    <button class="submit-btn">Check availability</button>
+                    <button  type="submit" class="submit-btn">Check availability</button>
                   </div>
                 </div>
               </div>

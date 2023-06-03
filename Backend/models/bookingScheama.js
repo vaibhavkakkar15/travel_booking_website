@@ -11,11 +11,11 @@ const bookingScheama = new mongoose.Schema({
   },
   persons: {
     type: Number,
-    required: true,
+    // required: true,
   },
   price:{
     type:Number,
-    require:true,
+    // require:true,
   },
   bookingDate: {
     type: Date,

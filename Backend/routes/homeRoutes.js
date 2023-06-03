@@ -9,6 +9,9 @@ const {
   isSeller,
   isProductAuthor,
 } = require("../middleware");
+
+
+
 //display Home page
 router.get("/home", async (req, res) => {
   let packages = await Package.find({});
@@ -22,6 +25,8 @@ router.get("/home/:id", async (req, res) => {
   const gallery = await Gallery.findById(id);
   res.render("packages/show", { package, gallery });
 });
+
+
 
 
 module.exports = router;

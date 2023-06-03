@@ -25,22 +25,22 @@
           <div class="row d-flex flex-sm-wrap">
             <div class="col-md-4 col-md-pull-7">
               <div class="booking-form">
-                <form>
+                <form action="/booking" method="Post">
                   <div class="form-group">
-                    <span class="form-label">Your Destination</span>
-                    <input class="form-control" type="text" placeholder="Enter a destination or hotel name" value="<%=package.name%>" readonly>
+                    <label class="form-label" for="destination">Your Destination</label>
+                    <input class="form-control" type="text" placeholder="Enter a destination or hotel name" value="<%=package.name%>" id="destination" readonly>
                   </div>
                   <div class="row">
                     <div class="col-sm-6">
                       <div class="form-group">
-                        <span class="form-label">Starting Date</span>
-                        <input class="form-control" type="date" required>
+                        <label class="form-label" for="startDate">Starting Date</label>>
+                        <input class="form-control" type="date" id="startDate" name="startDate" required>
                       </div>
                     </div>
                     <div class="col-sm-6">
                       <div class="form-group">
-                        <span class="form-label">Ending Date</span>
-                        <input class="form-control" type="date" required>
+                        <label class="form-label" for="endDate">Ending Date</span>
+                        <input class="form-control" type="date" id="endDate" name="endDate" required>
                       </div>
                     </div>
                   </div>
@@ -86,7 +86,7 @@
                     </div>
                   </div>
                   <div class="form-btn">
-                    <button class="submit-btn">Book Now</button>
+                    <button type="submit" class="submit-btn">Book Now</button>
                   </div>
                 </form>
               </div>
@@ -101,18 +101,21 @@
               <form class="d-inline-block" action="/user/<%=package._id%>/add" method="POST">
                 <button>Add To Cart</button>
 </form>
+<!-- <form action="payment" method="POST">
+  <script
+    src="//checkout.stripe.com/v2/checkout.js"
+    class="stripe-button"
+    data-key=""
+    data-amount="<%=package.price%>"
+    data-currency="usd"
+    data-name="<%=package.name%>"
+    data-description="Complete Process to Purchase Package"
+    data-Locale="auto"
+  ></script>
+</form> -->
 
 
-              <%if(currentUser && currentUser.role === 'seller'){%>
-              <div class="functionalities">
-                  <a href="/packages/<%=package._id%>/edit"  class="text-light"
-                  >Edit</a
-                >
-                <form class="d-inline-block" action="/packages/<%=package._id%>?_method=DELETE" method="POST">
-                  <button class="btn btn-danger btn-sm">Delete</button>
-               </form>
-              </div>
-              <%}%>
+             
             </div>
           </div>
         </div>
@@ -120,6 +123,23 @@
     </div>
   </div>
 
+
+
+  <div class="row" style="width:100%">
+    <%if(currentUser && currentUser.role === 'seller'){%>
+      <div class="functionalities">
+         <button class="btn btn-primary"><a href="/packages/<%=package._id%>/edit"  class="text-light"
+          >Edit</a
+        ></button> 
+        <form class="d-inline-block" action="/packages/<%=package._id%>?_method=DELETE" method="POST">
+          <button class="btn btn-danger btn-sm">Delete</button>
+       </form>
+      </div>
+      <%}%>
+    <form action="/pay" method="post">
+    <button class="btn btn-primary" type ="submit">Buy Package</button>
+  </form>
+  </div>
   <!-- long desc -->
 
   <div class="row" style="height:100vh; width:100%">
@@ -130,10 +150,10 @@
   <!-- review section -->
 
     <div class="row rev">
-      <h1 class="display-6">Leave Your Review</h1>
+      <h1 class="display-6 text-center">Leave Your Review</h1>
             
       <form action="/packages/<%=package._id%>/review" method="post">
-          <div>
+          <div style="display:flex; justify-content: center; width:80% ; position: relative; left:100px;">
               <fieldset class="starability-basic">
                   <input type="radio" id="no-rate" class="input-no-rate" name="rating" value="0" checked aria-label="No rating." />
                   <input type="radio" id="first-rate1" name="rating" value="1" />
@@ -148,11 +168,11 @@
                   <label for="first-rate5" title="Amazing">5 stars</label>
               </fieldset>
           </div>
-          <div class="mb-3">
+          <div class="mb-3" style="display:flex; justify-content: center; width:80% ; position: relative; left:100px;" >
               <label class="form-label" for="desc">Description</label>
-              <textarea class="form-control" name="comment" id="desc" rows="3"></textarea>
+              <textarea class="form-control" name="comment" id="desc" rows="2" width="500px"></textarea>
           </div>
-          <button class="btn btn-success btn-sm" type="submit">Submit</button>
+          <button class="btn btn-success btn-sm" type="submit"  style="position: relative; left:700px;">Submit</button>
       </form>
       <div class="my-3">
           <%for(let review of package.reviews){%>
@@ -162,7 +182,7 @@
                           Rated: <%=review.rating%> stars
                       </p>
                       <p class="card-text"><%=review.comment%></p>
-                      <button class="btn btn-danger btn-sm">Delete</button>
+                      <button class="btn btn-danger btn-sm" style="position: relative; left:100px;">Delete</button>
                   </div>
               </div>
           <%}%>

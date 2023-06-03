@@ -2,6 +2,11 @@ const express = require("express");
 const router = express.Router();
 const Booking = require("../models/bookingScheama");
 
+router.get("/booking", (req, res) => {
+  res.send("Done");
+  res.render("packages/book.ejs");
+});
+
 router.post("/booking", async (req, res) => {
   try {
     const booking = new Booking({
@@ -13,7 +18,7 @@ router.post("/booking", async (req, res) => {
     });
     await booking.save();
     const bookings = await Booking.find();
-    res.render("cart/cart", { bookings });
+    res.redirect("/booking");
   } catch (err) {
     console.log(err);
     res.status(500).send("Server Error");

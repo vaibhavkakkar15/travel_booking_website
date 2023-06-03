@@ -14,6 +14,7 @@ router.get("/packages", async (req, res) => {
   try {
     let packages = await Package.find({});
     res.render("packages/packages", { packages });
+    console.log(packages , 'sam');
   } catch (e) {
     res.status(500).render("error", { err: e.message });
   }
@@ -117,4 +118,9 @@ router.delete(
     }
   }
 );
+
+
+router.post("/pay",(req,res)=>{
+  res.render("payment.ejs");
+})
 module.exports = router;

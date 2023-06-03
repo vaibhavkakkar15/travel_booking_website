@@ -2,6 +2,9 @@
   margin: 0;
   padding: 0;
 }
+html {
+  scroll-behavior: smooth !important;
+}
 
 main {
   display: flex;
@@ -169,7 +172,6 @@ body {
   align-items: center;
   width: 100%;
   margin: auto;
-  
 }
 /* .carousel-inner {
   position: relative;
